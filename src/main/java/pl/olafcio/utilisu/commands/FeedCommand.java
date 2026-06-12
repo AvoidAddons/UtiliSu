@@ -16,7 +16,6 @@ public class FeedCommand extends Command {
     public void feed(Usage input) {
         if (input.getExecutor() instanceof Player player) {
             player.updateFoodLevel(20);
-            player.updateFoodSaturation(5F);
 
             player.sendMessage(Components.literal("Fed.")
                                          .color(Colors.GOLD));
@@ -32,7 +31,6 @@ public class FeedCommand extends Command {
         var player = input.getArgument("player", Player.class);
 
         player.updateFoodLevel(20);
-        player.updateFoodSaturation(5F);
 
         input.getExecutor().sendMessage(
                 Components.literal("Fed ")
