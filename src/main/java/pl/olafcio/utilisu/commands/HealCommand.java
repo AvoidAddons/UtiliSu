@@ -27,4 +27,25 @@ public class HealCommand extends Command {
                                                       .color(Colors.RED));
         }
     }
+
+    @Syntax("/heal <player>")
+    public void healPlayer(Usage input) {
+        var player = input.getArgument("player", Player.class);
+
+        player.updateHealth(player.getMaxHealth());
+        player.updateFoodLevel(20);
+        player.updateFoodSaturation(5F);
+
+        if (player.isOnFire())
+            player.extinguishFire();
+
+        input.getExecutor().sendMessage(
+                Components.literal("Healed ")
+                          .color(Colors.GOLD)
+                          .append(Components.literal(player.getName())
+                                            .color(Colors.YELLOW))
+                          .append(Components.literal(".")
+                                            .color(Colors.GOLD))
+        );
+    }
 }
