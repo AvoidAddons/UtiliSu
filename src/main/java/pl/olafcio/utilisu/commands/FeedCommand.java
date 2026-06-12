@@ -23,4 +23,21 @@ public class FeedCommand extends Command {
                                                       .color(Colors.RED));
         }
     }
+
+    @Syntax("/feed <player>")
+    public void feedPlayer(Usage input) {
+        var player = input.getArgument("player", Player.class);
+
+        player.updateFoodLevel(20);
+        player.updateFoodSaturation(5F);
+
+        input.getExecutor().sendMessage(
+                Components.literal("Fed ")
+                          .color(Colors.GOLD)
+                          .append(Components.literal(player.getName())
+                                            .color(Colors.YELLOW))
+                          .append(Components.literal(".")
+                                            .color(Colors.GOLD))
+        );
+    }
 }
