@@ -1,0 +1,13 @@
+{
+  "__schema": 1,
+
+  "id": "utilisu",
+  "version": "1.0",
+  "version-system": "semver",
+
+  "name": "UtiliSu",
+  "author": "Olafcio",
+  "description": "Adds utility commands to your server/worlds.",
+
+  "main-class": "pl.olafcio.utilisu.UtiliSu"
+}
