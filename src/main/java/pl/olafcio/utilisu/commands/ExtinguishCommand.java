@@ -4,6 +4,7 @@ import pl.olafcio.avoid.mods.annotation_processor.AutoCommand;
 import pl.olafcio.avoid.net.chat.component.Colors;
 import pl.olafcio.avoid.net.chat.component.Components;
 import pl.olafcio.avoid.net.command.Command;
+import pl.olafcio.avoid.net.command.annotation.PermissionLevel;
 import pl.olafcio.avoid.net.command.annotation.Syntax;
 import pl.olafcio.avoid.net.command.handling.Usage;
 import pl.olafcio.avoid.net.player.Player;
@@ -11,6 +12,7 @@ import pl.olafcio.avoid.net.player.Player;
 @AutoCommand
 public class ExtinguishCommand extends Command {
     @Syntax("/extinguish")
+    @PermissionLevel(value = "utilisu.extinguish", level = PermissionLevel.Enum.GAMEMASTERS)
     public void extinguish(Usage input) {
         if (input.getExecutor() instanceof Player player) {
             if (player.isOnFire())
@@ -25,6 +27,7 @@ public class ExtinguishCommand extends Command {
     }
 
     @Syntax("/extinguish <player>")
+    @PermissionLevel(value = "utilisu.extinguish.others", level = PermissionLevel.Enum.GAMEMASTERS)
     public void extinguishPlayer(Usage input) {
         var player = input.getArgument("player", Player.class);
         if (player.isOnFire())
