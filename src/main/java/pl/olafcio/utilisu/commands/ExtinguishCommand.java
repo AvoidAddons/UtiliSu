@@ -11,7 +11,7 @@ import pl.olafcio.avoid.net.player.Player;
 @AutoCommand
 public class ExtinguishCommand extends Command {
     @Syntax("/extinguish")
-    public void heal(Usage input) {
+    public void extinguish(Usage input) {
         if (input.getExecutor() instanceof Player player) {
             if (player.isOnFire())
                 player.extinguishFire();
@@ -22,5 +22,21 @@ public class ExtinguishCommand extends Command {
             input.getExecutor().sendMessage(Components.literal("Can only extinguish players")
                                                       .color(Colors.RED));
         }
+    }
+
+    @Syntax("/extinguish <player>")
+    public void extinguishPlayer(Usage input) {
+        var player = input.getArgument("player", Player.class);
+        if (player.isOnFire())
+            player.extinguishFire();
+
+        input.getExecutor().sendMessage(
+                Components.literal("Extinguished ")
+                          .color(Colors.GOLD)
+                          .append(Components.literal(player.getName())
+                                            .color(Colors.YELLOW))
+                          .append(Components.literal(".")
+                                            .color(Colors.GOLD))
+        );
     }
 }
