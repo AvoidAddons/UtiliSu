@@ -66,7 +66,7 @@ following conditions:
 3. You cannot claim that you wrote the full code; the following mention of this project must be at least present in a file
    called `LICENSE` or `NOTICE` in your program files:
    <br/><br/>
-   `This project uses elements from <github.com/this-project-link>, and hereby all its maintainers (including the creator, developers and artwork managers/artists) have to comply with the OLAFCIO EXTERNAL TEDGE-SUITE LICENSE.`
+   `This project uses elements from <github.com/AvoidAddons/UtiliSu>, and hereby all its maintainers (including the creator, developers and artwork managers/artists) have to comply with the OLAFCIO EXTERNAL TEDGE-SUITE LICENSE.`
    <br/><br/>
    You **don't** have to specify the accurate location where you used code fragments of this project.<br/>
    You still have to provide this document in the program files though (according with *Section #2, article 1*).
